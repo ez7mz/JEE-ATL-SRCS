@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<head>
+   <title>Registration Successful</title>
+   <link rel="stylesheet" type="text/css" href="sucstyles.css" />
+</head>
+<f:view>
+   <div class="container">
+      <h1>Registration Successful</h1>
+      <p>Thank you for registering! Your account has been created successfully.</p>
+   </div>
+   <div class="card">
+      <h2>Personal Information</h2>
+      <h:panelGrid columns="2">
+         <h:outputLabel value="Nom : " />
+         <h:outputLabel value="#{param.nom}"/>
+
+         <h:outputLabel value="Prenom : " />
+         <h:outputLabel value="#{param.prenom}"/>
+
+         <h:outputLabel value="Birth Date : " />
+         <h:outputLabel value="#{param.birthDate}"/>
+
+         <h:outputLabel value="CIN : " />
+         <h:outputLabel value="#{param.cin}"/>
+
+         <h:outputLabel value="Email : " />
+         <h:outputLabel value="#{param.email}"/>
+
+         <h:outputLabel value="Phone : " />
+         <h:outputLabel value="#{param.phone}"/>
+      </h:panelGrid>
+   </div>
+</f:view>
+</html>

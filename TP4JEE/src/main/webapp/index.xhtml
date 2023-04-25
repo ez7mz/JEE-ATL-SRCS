@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<head>
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="formstyle.css?version=1" />
+</head>
+<f:view>
+    <div class="container">
+        <div class="form-wrapper">
+            <img src="Logo.png" alt="Logo" class="logo" />
+            <h1>Registration Form</h1>
+            <h:form>
+                <h:outputLabel for="nom">Nom:</h:outputLabel>
+                <div>
+                    <h:inputText id="nom" value="#{person.nom}" required="true" requiredMessage="⚠ Please enter your Last Name."
+                                 validatorMessage="⚠ Nom should contain only letters">
+                        <f:validateRegex pattern="^[A-Za-z\-]+$" />
+                    </h:inputText>
+                    <h:message for="nom" style="color:red" />
+                </div>
+
+                <h:outputLabel for="prenom">Prenom:</h:outputLabel>
+                <div>
+                    <h:inputText id="prenom" value="#{person.prenom}" required="true" requiredMessage="⚠ Please enter your First Name"
+                                 validatorMessage="⚠ Nom should contain only letters">
+                        <f:validateRegex pattern="^[A-Za-z\-]+$" />
+                    </h:inputText>
+                    <h:message for="prenom" style="color:red" />
+                </div>
+
+                <h:outputLabel for="birthDate">Birth Date:</h:outputLabel>
+                <div>
+                    <h:inputText id="birthDate" value="#{person.birthDate}" required="true" requiredMessage="⚠ Please enter your Birth Date."
+                                 validatorMessage="⚠ Invalid Date format (yyyy-mm-dd)">
+                        <f:validateRegex pattern="^[0-9]{4}\-(0[1-9]|1[0-2])\-(0[1-9]|[1-2][0-9]|3[0-1])$" />
+                    </h:inputText>
+                    <h:message for="birthDate" style="color:red" />
+                </div>
+
+                    <h:outputLabel for="cin">CIN:</h:outputLabel>
+                <div>
+                    <h:inputText id="cin" value="#{person.cin}" required="true" requiredMessage="⚠ Please enter your CIN."/>
+                    <h:message for="cin" style="color:red" />
+                </div>
+
+                <h:outputLabel for="email">Email:</h:outputLabel>
+                <div>
+                    <h:inputText id="email" value="#{person.email}" required="true" requiredMessage="⚠ Please enter your email address."
+                             validatorMessage="⚠ Invalid email format (example@email.com)" >
+                        <f:validateRegex
+                            pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+                    </h:inputText>
+                    <h:message for="email" style="color:red" />
+                </div>
+
+                <h:outputLabel for="phone">Phone:</h:outputLabel>
+                <div>
+                    <h:inputText id="phone" value="#{person.phone}" required="true" requiredMessage="⚠ Please enter your Phone"
+                        validatorMessage="⚠ Invalid Phone format (+212 XXX-XXXXXX)">
+                        <f:validateRegex pattern="^\+212\s[0-9]{3}\-[0-9]{6}$" />
+                    </h:inputText>
+                    <h:message for="phone" style="color:red" />
+                </div>
+
+                <h:commandButton value="Submit" action="submit" />
+            </h:form>
+        </div>
+    </div>
+</f:view>
+</html>

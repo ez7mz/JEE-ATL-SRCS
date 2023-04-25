@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+
+
+<head>
+<!--  <link rel="stylesheet" th:href="@{/css/style.css}">-->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Registration</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" th:href="@{http://fonts.googleapis.com/css?family=Roboto:400,100,300,500}">
+  <link rel="stylesheet" th:href="@{/assets/bootstrap/css/bootstrap.min.css}">
+  <link rel="stylesheet" th:href="@{/assets/font-awesome/css/font-awesome.min.css}">
+  <link rel="stylesheet" th:href="@{/assets/css/form-elements.css}">
+  <link rel="stylesheet" th:href="@{/assets/css/style.css}">
+
+  <!-- Favicon and touch icons -->
+  <link rel="shortcut icon" th:href="@{/assets/ico/favicon.png}">
+
+</head>
+
+<body>
+
+<!-- Top menu -->
+<nav class="navbar navbar-inverse navbar-no-bg" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" th:href="@{index.html}">Student Registration</a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="top-navbar-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+                        <span class="li-social">
+                            <a th:href="@{https://linkedin.com/}" target="_blank"><i class="fa fa-linkedin"></i></a>
+                            <a th:href="@{https://github.com/}" target="_blank"><i class="fa fa-github"></i></a>
+                            <a th:href="@{https://twitter.com/}" target="_blank"><i class="fa fa-twitter"></i></a>
+                            <a th:href="@{https://www.facebook.com/}" target="_blank"><i class="fa fa-facebook"></i></a>
+						</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Top content -->
+<div class="top-content">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2 text">
+        <h1>Registration <strong>Ensakh-iid</strong> Student</h1>
+        <div class="description">
+          <p>
+            This is a Registration Form for ensakh-iid Student.<br> Made with <strong>spring Boot</strong> for JEE/JS Module, ATL5. By @ez7mz
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 form-box">
+        <form role="form" action="saveRegistration" method="post" class="f1">
+
+          <h3>Register To Our Platform</h3>
+          <p>Fill in the form to get instant access</p>
+          <div class="f1-steps">
+            <div class="f1-progress">
+              <div class="f1-progress-line" data-now-value="16.66" data-number-of-steps="3" style="width: 16.66%;"></div>
+            </div>
+            <div class="f1-step active">
+              <div class="f1-step-icon"><i class="fa fa-user"></i></div>
+              <p>About</p>
+            </div>
+            <div class="f1-step">
+              <div class="f1-step-icon"><i class="fa fa-key"></i></div>
+              <p>Internal</p>
+            </div>
+            <div class="f1-step">
+              <div class="f1-step-icon"><i class="fa fa-book"></i></div>
+              <p>Study</p>
+            </div>
+          </div>
+
+          <fieldset>
+            <h4>Tell us who you are:</h4>
+            <div class="form-group">
+              <label class="sr-only" for="f1-first-name">First name</label>
+              <input type="text" name="first_name" placeholder="First name..." class="f1-first-name form-control" id="f1-first-name">
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="f1-last-name">Last name</label>
+              <input type="text" name="last_name" placeholder="Last name..." class="f1-last-name form-control" id="f1-last-name">
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="f1-email">Email</label>
+              <input type="text" name="email" placeholder="Email..." class="f1-email form-control" id="f1-email">
+            </div>
+            <div class="f1-buttons">
+              <button type="button" class="btn btn-next">Next</button>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <h4>Set up your account:</h4>
+            <div class="form-group">
+              <label class="sr-only" for="f1-birth-date">Birth Date</label>
+              <input type="date" name="dob" placeholder="birth Date..." class="f1-birth-date form-control" id="f1-birth-date" required>
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="f1-cin">CIN</label>
+              <input type="text" name="cin" placeholder="CIN..." class="f1-cin form-control" id="f1-cin">
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="f1-phone">Phone Number</label>
+              <input type="tel" name="phone" placeholder="Phone Number (Format : +212 XXX-XXXXXX)..." class="f1-phone form-control" id="f1-phone" pattern="^\+212\s\d{3}-\d{6}$" required>
+            </div>
+            <div class="f1-buttons">
+              <button type="button" class="btn btn-previous">Previous</button>
+              <button type="button" class="btn btn-next">Next</button>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <h4>Study information:</h4>
+            <div class="form-group">
+              <label class="sr-only" for="f1-filiere">Filiere</label>
+              <input type="text" name="filier" placeholder="Filiere..." class="f1-filiere form-control" id="f1-filiere">
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="f1-cycle">Cycle</label>
+              <input type="text" name="cycle" placeholder="Cycle..." class="f1-cycle form-control" id="f1-cycle">
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="f1-ryear">Registration Year</label>
+              <input type="text" name="regdate" placeholder="Registraion Year..." class="f1-ryear form-control" id="f1-ryear">
+            </div>
+            <div class="f1-buttons">
+              <button type="button" class="btn btn-previous">Previous</button>
+              <button type="submit" class="btn btn-submit">Submit</button>
+            </div>
+          </fieldset>
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- Javascript -->
+<script th:src="@{/assets/js/jquery-1.11.1.min.js}"></script>
+<script th:src="@{/assets/bootstrap/js/bootstrap.min.js}"></script>
+<script th:src="@{/assets/js/jquery.backstretch.min.js}"></script>
+<script th:src="@{/assets/js/retina-1.1.0.min.js}"></script>
+<script th:src="@{assets/js/scripts.js}"></script>
+
+<!--[if lt IE 10]>
+<script th:src="@{/assets/js/placeholder.js}"></script>
+<![endif]-->
+
+</body>
+
+
+<!-- Mirrored from azmind.com/demo/bootzard-bootstrap-wizard-template/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 18 Sep 2018 15:51:59 GMT -->
+
+</html>

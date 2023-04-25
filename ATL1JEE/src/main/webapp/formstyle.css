@@ -1,0 +1,110 @@
+@charset "ISO-8859-1";
+
+body {
+    font-family : "Montserrat";
+    background: rgb(34,30,202);
+    background: linear-gradient(90deg, rgba(34,30,202,1) 0%, rgba(255,12,93,1) 100%);
+}
+
+/* Center the registration form */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*height: 100vh;*/
+}
+
+/* Add a title */
+h1 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 20px;
+    color : #FFF;
+}
+
+/* Add a logo */
+.logo {
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    height: auto;
+}
+
+form {
+    width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+}
+
+h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"]{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+/* Style for the select */
+select {
+    appearance: none;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Style for the dropdown arrow */
+select::after {
+    content: "?";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Style for the option elements */
+option {
+    background-color: #fff;
+    color: #333;
+}
+
+input[type="submit"] {
+    background-color: #0066cc;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0052a3;
+}
